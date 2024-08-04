@@ -1,0 +1,134 @@
+.header {
+  position: relative;
+  z-index: 1;
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url("../img/bg-1.jpg") no-repeat center/cover;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: rgba(23, 31, 23, 0.8);
+  }
+  &__container {
+    min-height: 100dvh;
+    padding-top: 37px;
+    padding-bottom: 37px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  &__logo {
+    width: 100%;
+    height: auto;
+    margin-bottom: 40px;
+  }
+
+  &__select {
+    @media screen and (min-width: $breakpoint-xl) {
+      display: none;
+    }
+  }
+
+  &__main {
+    margin: auto;
+  }
+
+  &__title {
+  }
+
+  &__cards {
+    margin-bottom: 40px;
+    @media screen and (min-width: $breakpoint-xl) {
+      display: flex;
+      gap: 20px;
+    }
+  }
+
+  &__card {
+    margin-top: 10px;
+    &:first-child {
+      margin-top: 0;
+    }
+
+    @media screen and (min-width: $breakpoint-md) {
+      display: flex;
+      gap: 20px;
+    }
+    @media screen and (min-width: $breakpoint-xl) {
+      gap: 15px;
+      flex: 1 1 40%;
+      margin-top: 0;
+    }
+  }
+
+  &__card-title {
+    margin-bottom: 10px;
+
+    @media screen and (min-width: $breakpoint-md) {
+      flex: 0 0 176px;
+    }
+    @media screen and (min-width: $breakpoint-xl) {
+      flex-basis: auto;
+    }
+
+    br {
+      display: none;
+      @media screen and (min-width: $breakpoint-xl) {
+        display: block;
+      }
+    }
+  }
+
+  &__card-text {
+  }
+
+  &__main-btns {
+    @media screen and (min-width: $breakpoint-md) {
+      text-align: center;
+    }
+  }
+
+  &__link {
+    width: 100%;
+    text-align: center;
+    @media screen and (min-width: $breakpoint-md) {
+      width: auto;
+    }
+  }
+
+  &__social {
+    display: flex;
+    gap: 11px;
+    line-height: 10px;
+    @media screen and (min-width: $breakpoint-xl) {
+      display: none;
+    }
+  }
+
+  &__social-link {
+    svg {
+      width: 23px;
+      height: 23px;
+      fill: white;
+      transition: fill 0.2s linear;
+
+      @media screen and (min-width: $breakpoint-md) {
+        width: 25px;
+        height: 25px;
+      }
+
+      @media screen and (min-width: $breakpoint-xl) {
+        width: 15px;
+        height: 15px;
+      }
+    }
+
+    &:hover svg {
+      fill: var(--hover-brand-color);
+    }
+  }
+}

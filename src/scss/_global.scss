@@ -1,0 +1,301 @@
+body {
+  font-family: "Montserrat";
+  background: var(--black-color);
+  color: var(--text-color);
+  font-size: 12px;
+  line-height: 1.2;
+
+  @media screen and (min-width: $breakpoint-xxl) {
+    font-size: 14px;
+  }
+}
+
+.pc {
+  @media screen and (min-width: $breakpoint-md) {
+    height: 100dvh;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    overflow: hidden;
+    list-style: none;
+    padding: 0;
+    z-index: 1;
+    display: block;
+  }
+}
+
+.section {
+  display: grid;
+  align-items: center;
+  padding: 30px 0;
+}
+
+.hidden {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.wrapper {
+  display: flex;
+  flex-flow: column;
+
+  > .swiper-slide {
+    @media screen and (max-width: 767px) {
+      width: auto;
+      height: auto;
+    }
+  }
+}
+
+.container {
+  padding: 0 30px;
+  margin: 0 auto;
+  width: 100%;
+
+  @media screen and (min-width: $breakpoint-md) {
+    max-width: 696px;
+  }
+
+  @media screen and (min-width: $breakpoint-lg) {
+    max-width: 862px;
+  }
+
+  @media screen and (min-width: $breakpoint-xxl) {
+    max-width: 996px;
+  }
+}
+
+.main-title,
+.title,
+.subtitle {
+  font-family: "Oswald";
+  font-weight: 500;
+  font-size: 40px;
+  text-transform: uppercase;
+  color: var(--white-color);
+  .color {
+    color: var(--brand-color);
+  }
+
+  @media screen and (min-width: $breakpoint-md) {
+    font-size: 60px;
+  }
+
+  @media screen and (min-width: $breakpoint-xl) {
+    font-size: 70px;
+  }
+
+  @media screen and (min-width: $breakpoint-xxl) {
+    font-size: 100px;
+  }
+}
+
+.main-title {
+  font-size: 50px;
+  @media screen and (min-width: $breakpoint-md) {
+    font-size: 80px;
+  }
+
+  @media screen and (min-width: $breakpoint-xl) {
+    font-size: 80px;
+  }
+
+  @media screen and (min-width: $breakpoint-xxl) {
+    font-size: 100px;
+  }
+}
+
+.title {
+  text-align: center;
+}
+
+.subtitle {
+  font-size: 18px;
+
+  @media screen and (min-width: $breakpoint-md) {
+    font-size: 18px;
+  }
+
+  @media screen and (min-width: $breakpoint-xl) {
+    font-size: 20px;
+  }
+
+  @media screen and (min-width: $breakpoint-xxl) {
+    font-size: 24px;
+  }
+}
+
+.text {
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 0.2px;
+  span {
+    color: var(--white-color);
+    font-weight: 700;
+  }
+  @media screen and (min-width: $breakpoint-xxl) {
+    font-size: 14px;
+  }
+}
+
+.btn {
+  font-family: "Oswald";
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 500;
+  color: #000;
+  background: var(--brand-color);
+  transition: background 0.2s linear;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: -0.54px;
+  padding: 14px 25px;
+  display: inline-block;
+
+  &:hover {
+    background: var(--hover-brand-color);
+  }
+
+  @media screen and (min-width: $breakpoint-md) {
+    padding: 19px 35px;
+  }
+
+  @media screen and (min-width: $breakpoint-xxl) {
+    padding: 24px 40px;
+    font-size: 27px;
+  }
+}
+
+// !test
+// .stop-abuse {
+//   font-size: 44px;
+//   font-family: "Oswald";
+//   font-weight: 500;
+//   letter-spacing: -1.5px;
+//   text-transform: uppercase;
+//   font-weight: 700;
+//   position: relative;
+//   display: inline-block;
+//   color: var(--white-color);
+// }
+
+// .stop-abuse::after {
+//   content: "STOP PC ABUSE";
+//   position: absolute;
+//   top: 0;
+//   left: -5px;
+//   right: -2px;
+//   color: #afb9af;
+//   z-index: 2;
+//   clip-path: polygon(72% 0, 100% 0, 100% 100%, 30% 100%);
+//   background: rgba(0, 0, 0, 1);
+// }
+
+// *SELECT
+.select {
+  font-family: Oswald;
+  font-size: 18px;
+  font-weight: 500;
+  display: inline-block;
+  min-width: 70px;
+  height: 33px;
+  color: var(--white-color);
+
+  @media screen and (min-width: $breakpoint-md) {
+    font-size: 24px;
+  }
+  @media screen and (min-width: $breakpoint-xl) {
+    font-size: 16px;
+    min-width: 44px;
+    height: 24px;
+  }
+
+  &__dropholder {
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    svg {
+      position: absolute;
+      right: 5px;
+      top: 50%;
+      width: 10px;
+      height: 5px;
+      transform: translateY(-50%);
+    }
+  }
+
+  &__dropdown {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    cursor: pointer;
+    height: 33px;
+    position: relative;
+    padding: 10px 18px 10px 10px;
+    z-index: 20;
+
+    @media screen and (min-width: $breakpoint-xl) {
+      padding: 0;
+      height: 24px;
+    }
+
+    &.active + .select__dropdown-option {
+      display: block;
+    }
+  }
+
+  &__holder {
+  }
+
+  &__dropdown-option {
+    position: absolute;
+    left: 0;
+    top: 33px;
+    right: 0;
+    margin: 0;
+    cursor: pointer;
+    display: none;
+    z-index: 5;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    li {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 15px;
+      @media screen and (min-width: $breakpoint-xl) {
+        padding: 10px 0;
+      }
+      &:hover:not(.current) {
+        color: grey;
+      }
+    }
+  }
+
+  .current {
+    background: rgba(255, 255, 255, 0.1);
+  }
+}
+
+// TEXT SHADOW
+
+.text-with-shadow {
+  position: relative;
+}
+.text-with-shadow::after {
+  content: attr(data-text);
+  position: absolute;
+  z-index: -1;
+  left: 104%;
+  top: 50%;
+  transform: translateY(-50%);
+  white-space: nowrap;
+  color: rgba(255, 255, 255, 0.15);
+}

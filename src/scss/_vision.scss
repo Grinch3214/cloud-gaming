@@ -1,0 +1,106 @@
+.vision {
+  position: relative;
+  z-index: 1;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0) 10%,
+      rgba(0, 0, 0, 0.8) 70%
+    );
+  }
+
+  &__bg {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -20px;
+    width: 70%;
+    height: auto;
+    opacity: 0.7;
+    // mix-blend-mode: color-dodge;
+    @media screen and (min-width: $breakpoint-md) {
+      top: -100px;
+      opacity: 0.3;
+    }
+  }
+
+  &__container {
+    position: relative;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    @media screen and (min-width: $breakpoint-md) {
+      margin-bottom: 10px;
+    }
+    @media screen and (min-width: $breakpoint-xxl) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__subtitle {
+    text-transform: uppercase;
+    font-family: Oswald;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--white-color);
+    margin-bottom: 40px;
+    text-align: center;
+
+    @media screen and (min-width: $breakpoint-md) {
+      font-size: 24px;
+    }
+    @media screen and (min-width: $breakpoint-xl) {
+      margin-bottom: 30px;
+      font-size: 20px;
+    }
+    @media screen and (min-width: $breakpoint-xxl) {
+      font-size: 40px;
+      margin-bottom: 50px;
+    }
+  }
+
+  &__cards {
+    display: grid;
+    gap: 20px;
+
+    @media screen and (min-width: $breakpoint-md) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @media screen and (min-width: $breakpoint-xl) {
+      gap: 25px;
+    }
+  }
+
+  &__card {
+    background: rgba(225, 225, 225, 0.05);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    @media screen and (min-width: $breakpoint-md) {
+      display: flex;
+      flex-flow: column;
+    }
+    @media screen and (min-width: $breakpoint-xl) {
+      min-height: 250px;
+      padding-right: 30px;
+    }
+    @media screen and (min-width: $breakpoint-xxl) {
+      min-height: 300px;
+    }
+  }
+
+  &__card-title {
+    margin-bottom: 30px;
+  }
+
+  &__card-text {
+    margin-top: auto;
+    @media screen and (min-width: $breakpoint-md) {
+      margin-top: auto;
+    }
+  }
+}

@@ -1,0 +1,128 @@
+.join {
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0) 10%,
+      rgba(0, 0, 0, 0.8) 70%
+    );
+  }
+
+  &__container {
+    position: relative;
+
+    @media screen and (min-width: $breakpoint-md) {
+      display: grid;
+      grid-template-columns: 1fr 245px;
+    }
+    @media screen and (min-width: $breakpoint-lg) {
+      grid-template-columns: 1fr 390px;
+    }
+    @media screen and (min-width: $breakpoint-xxl) {
+      grid-template-columns: 1fr 410px;
+    }
+  }
+
+  &__content {
+    @media screen and (min-width: $breakpoint-xl) {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    @media screen and (min-width: $breakpoint-xxl) {
+      padding-bottom: 18px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 40px;
+    @media screen and (min-width: $breakpoint-md) {
+      margin-bottom: 0;
+    }
+    @media screen and (min-width: $breakpoint-xl) {
+      line-height: 1;
+    }
+    @media screen and (min-width: $breakpoint-xxl) {
+      line-height: 1.25;
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 20px;
+    @media screen and (min-width: $breakpoint-md) {
+      font-size: 24px;
+      margin-bottom: 40px;
+    }
+    @media screen and (min-width: $breakpoint-xl) {
+      margin-bottom: 30px;
+      margin-top: 8px;
+      font-size: 20px;
+    }
+    @media screen and (min-width: $breakpoint-xxl) {
+      font-size: 40px;
+      margin-bottom: 50px;
+    }
+  }
+
+  &__cards {
+    display: flex;
+    flex-flow: column;
+    gap: 20px;
+    @media screen and (min-width: $breakpoint-xl) {
+      margin-top: auto;
+    }
+  }
+
+  &__card {
+    display: flex;
+    gap: 20px;
+
+    @media screen and (min-width: $breakpoint-md) {
+      gap: 40px;
+      align-items: flex-end;
+    }
+
+    svg {
+      flex: 0 0 43px;
+      height: 100px;
+      @media screen and (min-width: $breakpoint-md) {
+        height: 110px;
+        flex-basis: 47px;
+      }
+      @media screen and (min-width: $breakpoint-md) {
+        flex-basis: 43px;
+        height: 100px;
+      }
+      @media screen and (min-width: $breakpoint-xxl) {
+        flex-basis: 60px;
+        height: 140px;
+      }
+    }
+  }
+
+  &__card-svg {
+  }
+
+  &__card-body {
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-end;
+    width: calc(100vw - 113px);
+    @media screen and (min-width: $breakpoint-md) {
+      width: auto;
+    }
+  }
+
+  &__card-title {
+    margin-bottom: 10px;
+  }
+
+  &__card-text {
+  }
+}

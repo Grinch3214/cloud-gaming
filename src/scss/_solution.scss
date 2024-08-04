@@ -1,0 +1,195 @@
+.solution {
+  position: relative;
+  z-index: 1;
+
+  &::before {
+    @media screen and (min-width: $breakpoint-md) {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      height: 415px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: var(--main-color);
+      // background: linear-gradient(
+      //   180deg,
+      //   rgba(11, 14, 12, 0.32) 11%,
+      //   rgba(11, 14, 12, 1) 24%
+      // );
+      clip-path: polygon(15% 0%, 100% 0, 100% 75%, 85% 100%, 0 100%, 0 25%);
+    }
+    @media screen and (min-width: $breakpoint-xl) {
+      height: 500px;
+      clip-path: polygon(10% 0%, 100% 0, 100% 80%, 90% 100%, 0 100%, 0 20%);
+    }
+    @media screen and (min-width: $breakpoint-xxl) {
+      height: 700px;
+    }
+  }
+  &__title {
+    margin-bottom: 40px;
+    @media screen and (min-width: $breakpoint-md) {
+      margin-bottom: 30px;
+    }
+    & > p {
+      @media screen and (min-width: $breakpoint-md) {
+        text-align: left;
+      }
+    }
+    & > p + p {
+      @media screen and (min-width: $breakpoint-md) {
+        text-align: right;
+      }
+    }
+  }
+
+  &__cards {
+    display: grid;
+    gap: 20px;
+    margin-bottom: 20px;
+    line-height: 14px;
+
+    @media screen and (min-width: $breakpoint-md) {
+      grid-template-columns: repeat(2, 1fr);
+      margin-bottom: 30px;
+      row-gap: 12px;
+    }
+  }
+
+  &__card {
+    padding: 24px 10px 15px 40px;
+    position: relative;
+    min-height: 130px;
+
+    @media screen and (min-width: $breakpoint-md) {
+      display: flex;
+      gap: 5px;
+      padding-left: 24px;
+      padding-bottom: 20px;
+      &:nth-child(2) {
+        order: 2;
+      }
+      &:nth-child(3) {
+        order: 1;
+      }
+      &:nth-child(4) {
+        order: 3;
+      }
+    }
+    @media screen and (min-width: $breakpoint-xxl) {
+      min-height: 170px;
+      padding-top: 40px;
+    }
+
+    &.without-styles {
+      margin-bottom: 20px;
+      padding: 0 9px;
+      min-height: auto;
+
+      @media screen and (min-width: $breakpoint-md) {
+        flex-flow: column;
+        margin: auto;
+      }
+
+      &::before,
+      &::after {
+        content: none;
+      }
+
+      .solution__card-title {
+        max-width: unset;
+        flex: 0 0 0px;
+      }
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      clip-path: polygon(55px 0, 100% 0, 100% 100%, 0 100%, 0 45px);
+      background: rgba(225, 225, 225, 0.05);
+
+      @media screen and (min-width: $breakpoint-md) {
+        clip-path: polygon(38px 0, 100% 0, 100% 100%, 0 100%, 0 38px);
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 45px;
+      width: 19px;
+      height: 19px;
+      background: linear-gradient(
+        to top right,
+        rgba(0, 0, 0, 0) 50%,
+        var(--brand-color) 50%
+      );
+
+      @media screen and (min-width: $breakpoint-md) {
+        left: 30px;
+      }
+    }
+  }
+
+  &__card-title {
+    margin-bottom: 10px;
+    @media screen and (min-width: $breakpoint-md) {
+      line-height: 1.3;
+      flex: 0 0 130px;
+    }
+    @media screen and (min-width: $breakpoint-xl) {
+      flex: 0 0 150px;
+    }
+    @media screen and (min-width: $breakpoint-xxl) {
+      flex: 0 0 180px;
+    }
+  }
+  .solution__card > div {
+    @media screen and (min-width: $breakpoint-md) {
+      flex: 0 0 130px;
+    }
+    @media screen and (min-width: $breakpoint-xl) {
+      flex: 0 0 150px;
+    }
+    @media screen and (min-width: $breakpoint-xxl) {
+      flex: 0 0 180px;
+    }
+  }
+
+  &__card-text {
+    line-height: 14px;
+
+    @media screen and (min-width: $breakpoint-xxl) {
+      line-height: 20px;
+    }
+  }
+  &__card-sub {
+    font-family: Oswald;
+    text-transform: uppercase;
+    display: inline-block;
+    font-size: 10px;
+    margin-top: -5px;
+    color: var(--white-color);
+    @media screen and (min-width: $breakpoint-xl) {
+      font-size: 14px;
+    }
+    @media screen and (min-width: $breakpoint-xxl) {
+      font-size: 18px;
+    }
+  }
+
+  &__btns {
+    text-align: center;
+  }
+
+  &__link {
+    width: 100%;
+    @media screen and (min-width: $breakpoint-md) {
+      width: auto;
+    }
+  }
+}
