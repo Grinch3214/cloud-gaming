@@ -1,19 +1,5 @@
 .united {
-  // background: var(--main-color);
   overflow: hidden;
-  position: relative;
-  z-index: 1;
-
-  &::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      to right,
-      rgba(0, 0, 0, 0) 10%,
-      rgba(0, 0, 0, 0.8) 70%
-    );
-  }
 
   &__container {
     @media screen and (min-width: $breakpoint-xl) {

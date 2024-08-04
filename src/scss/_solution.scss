@@ -1,13 +1,14 @@
 .solution {
   position: relative;
   z-index: 1;
+  overflow: hidden;
 
   &::before {
     @media screen and (min-width: $breakpoint-md) {
       content: "";
       position: absolute;
-      z-index: -1;
-      height: 415px;
+      z-index: 0;
+      height: 66%;
       left: 0;
       right: 0;
       bottom: 0;
@@ -20,14 +21,15 @@
       clip-path: polygon(15% 0%, 100% 0, 100% 75%, 85% 100%, 0 100%, 0 25%);
     }
     @media screen and (min-width: $breakpoint-xl) {
-      height: 500px;
+      height: 66%;
       clip-path: polygon(10% 0%, 100% 0, 100% 80%, 90% 100%, 0 100%, 0 20%);
     }
     @media screen and (min-width: $breakpoint-xxl) {
-      height: 700px;
+      height: 75%;
     }
   }
   &__title {
+    position: relative;
     margin-bottom: 40px;
     @media screen and (min-width: $breakpoint-md) {
       margin-bottom: 30px;

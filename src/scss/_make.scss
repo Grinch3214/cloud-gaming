@@ -1,14 +1,25 @@
 .make {
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1)),
-    url("../img/bg-3.png") no-repeat bottom / 700px 465px;
+  position: relative;
   padding-bottom: 85px;
-  @media screen and (min-width: $breakpoint-md) {
+  &::before {
+    // filter: contrast(95%);
+    content: "";
+    position: absolute;
+    inset: 0;
     background: linear-gradient(
         to right,
-        rgba(0, 0, 0, 0.4),
-        rgba(0, 0, 0, 0.1)
+        rgba(0, 0, 0, 0.6),
+        rgba(0, 0, 0, 0.3)
       ),
-      url("../img/bg-3.png") no-repeat bottom/auto 85%;
+      url("../img/bg-3.png") no-repeat bottom / 700px 465px;
+    @media screen and (min-width: $breakpoint-md) {
+      background: linear-gradient(
+          to right,
+          rgba(0, 0, 0, 0.6),
+          rgba(0, 0, 0, 0.3)
+        ),
+        url("../img/bg-3.png") no-repeat bottom/100% auto;
+    }
   }
 
   &__container {
