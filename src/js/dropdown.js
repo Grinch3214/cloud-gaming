@@ -22,6 +22,12 @@ function initSelect(elem) {
 			dropHolder.classList.toggle('active');
 		});
 	});
+
+	document.addEventListener('click', (event) => {
+		if (!elem.contains(event.target)) {
+			dropHolder.classList.remove('active');
+		}
+	});
 }
 
 export { initSelect, navigationSelect, navigationSelectFixed };

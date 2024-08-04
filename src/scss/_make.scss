@@ -1,21 +1,78 @@
 .make {
-  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
-    url("../img/bg-3.jpg") no-repeat center/cover;
+  position: relative;
+  padding-bottom: 85px;
+  &::before {
+    // filter: contrast(95%);
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.6),
+        rgba(0, 0, 0, 0.3)
+      ),
+      url("../img/webp/bg-3.webp") no-repeat bottom / 700px 465px;
+    @media screen and (min-width: $breakpoint-md) {
+      background: linear-gradient(
+          to right,
+          rgba(0, 0, 0, 0.6),
+          rgba(0, 0, 0, 0.3)
+        ),
+        url("../img/webp/bg-3.webp") no-repeat bottom/100% auto;
+    }
+  }
+
   &__container {
-    padding-bottom: 55px;
     position: relative;
   }
 
   &__title {
     margin-bottom: 40px;
+
+    p {
+      display: inline-block;
+    }
+
+    @media screen and (min-width: $breakpoint-md) {
+      margin-bottom: 30px;
+      p {
+        display: block;
+        text-align: left;
+      }
+      p + p {
+        text-align: right;
+      }
+    }
+    @media screen and (min-width: $breakpoint-xxl) {
+      margin-bottom: 50px;
+    }
   }
 
   &__inner {
     margin-bottom: 20px;
+    @media screen and (min-width: $breakpoint-md) {
+      display: flex;
+      gap: 20px;
+    }
+    @media screen and (min-width: $breakpoint-xxl) {
+      margin-bottom: 50px;
+    }
   }
 
   &__inner-title {
     margin-bottom: 10px;
+    @media screen and (min-width: $breakpoint-md) {
+      font-size: 30px;
+      flex: 0 0 240px;
+    }
+    @media screen and (min-width: $breakpoint-xl) {
+      font-size: 24px;
+      flex: 0 0 200px;
+    }
+    @media screen and (min-width: $breakpoint-xxl) {
+      font-size: 36px;
+      flex: 0 0 300px;
+    }
   }
 
   &__text {
@@ -23,6 +80,18 @@
 
   &__subtitle {
     margin-bottom: 20px;
+    text-align: center;
+    @media screen and (min-width: $breakpoint-md) {
+      font-size: 24px;
+      margin-bottom: 30px;
+
+      br {
+        display: none;
+      }
+    }
+    @media screen and (min-width: $breakpoint-xxl) {
+      margin-bottom: 50px;
+    }
   }
 
   &__btns {
@@ -31,11 +100,14 @@
 
   &__link {
     width: 100%;
+    @media screen and (min-width: $breakpoint-md) {
+      width: auto;
+    }
   }
 
   &__footer {
     position: absolute;
-    bottom: 0;
+    bottom: 30px;
     left: 0;
     right: 0;
     text-align: center;
