@@ -242,6 +242,10 @@ body {
     position: relative;
     padding: 10px 18px 10px 10px;
     z-index: 20;
+    transition: color 0.2s linear;
+    &:hover {
+      color: var(--brand-color);
+    }
 
     @media screen and (min-width: $breakpoint-xl) {
       padding: 0;
