@@ -1,10 +1,10 @@
 import { initPcSwiper, initCommentSwiper } from './swiper-config.js';
 import '../scss/style.scss'
-import { initSelect, navigationSelect, navigationSelectFixed } from './dropdown.js';
+// import { initSelect, navigationSelect, navigationSelectFixed } from './dropdown.js';
 import { initVideoButton } from './video.js'
 
-initSelect(navigationSelect);
-initSelect(navigationSelectFixed);
+// initSelect(navigationSelect);
+// initSelect(navigationSelectFixed);
 initVideoButton();
 
 
